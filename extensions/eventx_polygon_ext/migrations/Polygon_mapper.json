@@ -1,0 +1,101 @@
+{
+    "compressed": true,
+    "workers": 3,
+    "tables": [
+        {
+            "originPath": "Block",
+            "targetTable": "MATIC.BLOCK",
+            "columnMapping": [
+                {
+                    "originKey": "number",
+                    "destColumn": "block_number",
+                    "dataType": "bigint"
+                },
+                {
+                    "originKey": "hash",
+                    "destColumn": "block_hash",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "timestamp",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "miner",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "parentHash",
+                    "destColumn": "parent_hash",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "reward",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "size",
+                    "dataType": "int"
+                },
+                {
+                    "originKey": "gasUsed",
+                    "destColumn": "gas_used",
+                    "dataType": "int"
+                },
+                {
+                    "originKey": "gasLimit",
+                    "destColumn": "gas_limit",
+                    "dataType": "int"
+                },
+                {
+                    "originKey": "baseFeePerGas",
+                    "destColumn": "base_fee_per_gas",
+                    "dataType": "String"
+                },
+                {
+                    "originKey": "transactionCount",
+                    "destColumn": "transaction_count",
+                    "dataType": "int"
+                }
+            ]
+        },{
+            "destTable": "MULTIPASS_MULTIPASSMINTED",
+            "origin": "MULTIPASS_MULTIPASSMINTED",
+            "label": "MULTIPASS_MULTIPASSMINTED",
+            "type": "array",
+            "sqlOperation": "MERGE",
+            "columnMapping": [
+              {
+                "origin": "owner",
+                "destColumn": "owner",
+                "dataType": "INT"
+              },
+              {
+                "origin": "tokenId",
+                "destColumn": "tokenId",
+                "dataType": "INT"
+              },
+              {
+                "origin": "address",
+                "destColumn": "contract_address",
+                "dataType": "String"
+              },
+              {
+                "origin": "blockNumber",
+                "destColumn": "block_number",
+                "dataType": "INT"
+              },
+              {
+                "origin": "timestamp",
+                "destColumn": "timestamp",
+                "dataType": "String"
+              },
+              {
+                "origin": "transactionHash",
+                "destColumn": "transaction_hash",
+                "dataType": "String"
+              } 
+            ]
+        }
+    ]
+}
